@@ -1,6 +1,6 @@
 import { Request } from "express";
  
-export interface context {
+export interface appContext {
     
     req: Request;
 }
