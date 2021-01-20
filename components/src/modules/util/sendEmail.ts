@@ -10,8 +10,8 @@ export async function sendEmail(email: string, url: string) {
         port: 587,
         secure: true, // use SSL
         auth: {
-         user: 'werambleservices@gmail.com',
-         pass: '0089fxcy?'
+         user: 'account.user',
+         pass: 'account.pass'
         }   
     });
 
