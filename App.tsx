@@ -19,6 +19,7 @@ import Registration from "./components/Register"
 import Camera from "./components/Camera"
 import Home from "./components/Home"
 import ImagePreview from "./components/ImagePreview"
+import PhotoViewer from "./components/PhotoViewer"
 
 
 const App: () => React$Node = () => {
@@ -33,6 +34,7 @@ const App: () => React$Node = () => {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Camera" component={Camera} />
           <Stack.Screen name="ImagePreview" component={ImagePreview} />
+          <Stack.Screen name="PhotoViewer" component={PhotoViewer} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

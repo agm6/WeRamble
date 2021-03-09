@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Button } from "react-native";
+import { Text, View, Image, StyleSheet, Dimensions, Button, TouchableWithoutFeedback } from "react-native";
 import { ip, port } from "../utils"
+import ImagePreview from './ImagePreview';
+import PhotoViewer from './PhotoViewer';
 
 const route = `http://${ip}:${port}/api/feed`
 const windowWidth = Dimensions.get('window').width;
@@ -42,11 +44,15 @@ export default function Home({ navigation }) {
             })
     }, [])
 
-    return (
-        <View>
-            <View style={styles.gallery}>{gallery}</View>
-            <Button title="Camera" onPress={() => navigation.navigate("Camera")}></Button>
+    const Item = ({gallery, onPress}) => 
+        <TouchableWithoutFeedback onPress = {onPress}>
+            <View style = {styles.gallery}>{gallery}</View>
+        </TouchableWithoutFeedback>;
 
+     return (
+        <View>
+            <Item gallery={gallery} onPress={() => navigation.navigate("PhotoViewer")}></Item>
+            <Button title="Camera" onPress={() => navigation.navigate("Camera")}></Button>
         </View>
     )
 }
